@@ -3,16 +3,15 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Alumno
 
-from django.urls import reverse_lazy, reverse # reverse_lazy es mejor para CBV
+from django.urls import reverse_lazy, reverse 
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
 #------------------ Altas ----------------
 class CrearAlumno(SuccessMessageMixin, CreateView):
     model = Alumno
-    # form = Alumno  <-- ELIMINA ESTA LÍNEA, causará errores
     fields = "__all__" 
-    template_name = "crear.html" # Asegúrate de que Django sepa qué archivo usar
+    template_name = "crear.html" 
     success_message = "¡Alumno AGREGADO con ÉXITO!"
 
     def get_success_url(self):
