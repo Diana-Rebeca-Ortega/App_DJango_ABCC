@@ -126,3 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# A dónde va después de poner bien la contraseña
+LOGIN_REDIRECT_URL = '/alumnos/'
+
+# A dónde lo manda si intenta entrar a alumnos sin estar logueado
+LOGIN_URL = '/accounts/login/'
